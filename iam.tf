@@ -2,7 +2,7 @@
 module devopsb16test_iam {
   source = "app.terraform.io/ChandDEVOPS/iam/aws"
   version = "1.0.0"
-  rolename  = "DevOpsB16TestRole"
+  rolename  = "DevOpsB16TestRole1"
   envname = "${module.devopsb16-testvpc.env}"
   instanceprofilename = "devopsb16test-ins-profile"
 }
@@ -12,5 +12,5 @@ module devopsb16_iam_policy {
   source = "app.terraform.io/ChandDEVOPS/iam-attachment/aws"
   version = "1.0.0"
   attachroles = "${module.devopsb16test_iam.rolename}"
-  policyname = "devopsb16-iam-policy1"
+  policyname = "devopsb16-iam-policy2"
 }
