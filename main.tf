@@ -5,7 +5,8 @@ provider "aws" {
 }
 
 module devopsb16-testvpc {
-  source = "./modules/vpc"
+  source = "app.terraform.io/ChandDEVOPS/vpc/aws"
+  version = "1.0.0"
 vpc_cidr = "10.120.0.0/16"
 vpc_name = "DevOpsB16-TestVpc"
 IGW_name = "DevOpsB16-Test-IGW"
@@ -19,7 +20,8 @@ environment = "Prod"
 }
 
 module devopsb16-ec2 {
-  source = "./modules/ec2"
+  source = "app.terraform.io/ChandDEVOPS/ec2/aws"
+  version = "1.0.0"
 imagename = "ami-0b9064170e32bde34"
 instance_type = "t2.nano"
 key_name = "WorkingkeypairPEM"
